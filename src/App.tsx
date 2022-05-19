@@ -6,26 +6,25 @@ import Menu from "./components/Menu";
 import Users from "./pages/Users/Users";
 import {BrowserRouter, Route,Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Register from "./pages/Register/Register";
+import Wrapper from "./components/Wrapper";
+import Login from "./pages/Login/Login";
+import UserLogin from "./pages/UserLogin/UserLogin";
 
 function App() {
     return (
         <div className="App">
+
             <BrowserRouter>
-            <Nav/>
-            <div className="container-fluid">
-                <div className="row">
-                    <Menu/>
-                    <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-                            <Routes>
-                                <Route path="/" element={<Dashboard/>} />
-                                <Route path="users" element={<Users/>} />
-                            </Routes>
-
-                    </main>
-                </div>
-            </div>
+                <Routes>
+                    <Route path="/" element={<Dashboard/>} />
+                    <Route path="users" element={<Users/>} />
+                    <Route path="register" element={<Register/>} />
+                    <Route path="login" element={<Login/>} />
+                    <Route path="ulogin" element={<UserLogin/>} />
+                </Routes>
             </BrowserRouter>
+
         </div>
     );
 }
